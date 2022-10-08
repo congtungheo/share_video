@@ -63,3 +63,4 @@ gem 'kaminari', '~> 1.2.2'
 gem 'devise', '~> 4.8.1'
 gem 'counter_culture', '~> 3.2.1'
 gem "slim"
+gem 'rails_12factor', group: :production
