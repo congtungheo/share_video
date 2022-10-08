@@ -19,4 +19,4 @@ test:
 
 production:
   <<: *default
-  database: <%= ENV.fetch('DATABASE_NAME') { 'share_video_production' } %>
+  database: <%= ENV.fetch('DATABASE_URL') { 'share_video_production' } %>
