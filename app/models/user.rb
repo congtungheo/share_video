@@ -17,4 +17,11 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  validates :email, presence: true, uniqueness: true
+  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
+  validates :password, length: { in: 8..20 }
+
+  has_many :movies, dependent: :destroy, inverse_of: :user
+  has_many :votes, dependent: :destroy, inverse_of: :user
 end
