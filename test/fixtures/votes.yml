@@ -14,8 +14,11 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
-# column: value
-#
-two: {}
-# column: value
+vote1:
+  id: 1
+  user_id: 1
+  movie_id: 1
+  vote_type: "down"
+  created_at: Sat, 08 Oct 2022 09:59:07.999932000 UTC +00:00
+  updated_at: Sat, 08 Oct 2022 09:59:07.999932000 UTC +00:00
+

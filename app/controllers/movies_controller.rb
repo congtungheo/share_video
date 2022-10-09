@@ -6,14 +6,18 @@ class MoviesController < ApplicationController
   end
 
   def create
-    @movie = current_user.movies.build
-    handle_params @movie, normalize_parameters
+    begin
+      @movie = current_user.movies.build
+      handle_params @movie, normalize_parameters
 
-    if @movie.save
-      return redirect_to root_path, notice: "Share success"
+      if @movie.save
+        return redirect_to root_path, notice: "Share success"
+      end
+
+      redirect_to new_movie_path, alert: "Share video Error"
+    rescue
+      redirect_to new_movie_path, alert: "Share video Error"
     end
-
-    redirect_to new_movie_path, alert: "Share video Error"
   end
 
   private
